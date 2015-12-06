@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app = 'myApp'>
+	<head>
+		 <meta charset="UTF-8"> 
+		<script type="text/javascript" src = 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.min.js'></script>
+		<script type="text/javascript" src = 'js/main.js'></script>
+	</head>
+	<body>
+		<h1>NPR Player</h1>
+		<div ng-controller = 'mainController'>
+			<input type = 'text' placeholder = 'Please enter your name' ng-model='yourName' ng-init="yourName = 'User'"></br></br>
+			Hello, {{yourName}}..!!
+			</br></br>
+			
+		</div>
+		<div ng-controller = 'PlayerController'>
+			<!--<button ng-click="play()" class="button" ng-show="!playing">Play</button>
+  			<button ng-click="pause()" class="button alert" ng-show="playing">Pause</button>-->
+  			<button ng-click="stop()" class="button alert">Stop</button>
+
+  			Playing audio: <b>{{ playing }}</b>
+  			</br></br>
+  			<ul >
+  				<li ng-repeat = 'program in programs' ng-click='play(program)'>
+  					{{program.title.$text}}
+  					<button ng-click="play(program)" class="button" >Play</button>
+  				</li>
+  				
+  			</ul>
+  			
+		</div>
+		
+	</body>
+</html>
